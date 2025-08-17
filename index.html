@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>تغییر رنگ پس زمینه به صورت تصادفی</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arisl, sans-serif;
+            color: white;
+            transition: background-color 1s ease;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+    </style>
+    
 </head>
 <body>
-    <h1>hello world</h1>
+    <h1>تجربه جدید با رنگ های تصادفی</h1>
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for(let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() *
+                16)];
+            }
+            return color;
+        }
+        document.body.style.backgroundColor = getRandomColor();
+    </script>
+
 </body>
 </html>
